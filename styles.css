@@ -4,82 +4,107 @@
   }
   
   body {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      height: 100vh;
-      background-color: #f0f0f0;
-      font-family: 'CustomFont', Arial, sans-serif;
-      font-size: 14px;
-      color:black
-  }
-  
-  #game-container {
-      position: relative;
-      width: 3px;
-      margin-top: 50px;
-  }
-  
-  #pencil-lead {
-      position: relative;
-      width: 100%;
-      height: 350px;
-      background-color: black;
-      transition: height 0.2s ease-in-out;
-  }
-  
-  #finish-line {
-      position: fixed;
-      bottom: 253px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 300px;
-      height: 3px;
-      background-color: green;
-  }
-  
-  .extend-button {
-      position: absolute;
-      top: 10%;
-      left: 25%;
-      transform: translateX(-50%);
-      width: 100px;
-      height: 50px;
-      background-color: gray;
-      border-radius: 25px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 14px;
-  }
-  
-  .instructions {
-    width: 100%;
-    margin-top: 10px;
-    text-align: left;
-} 
+    margin-left: 350px;
+    padding: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: left;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: 'CustomFont', Arial, sans-serif;
+}
 
-  #win-message {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 24px;
-      font-weight: bold;
-      color: green;
-      display: none;
-  }
-  
-  #reset-button {
-      visibility: hidden;
-      display: none;
-      position: absolute;
-      top: 60%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-  }
+.booty-cant-be-contained {
+  background-color: teal;
+  height: 500px; 
+  width: 330px;
+  margin-top:20px;
+}
+
+#extend-button {
+    top: 10%;
+    left: 25%;
+    margin-bottom:20px;
+    width: 100px;
+    height: 50px;
+    background-color: gray;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin:20px;
+}
+
+.instructions {
+    width: 300px;
+    height: 300px;
+    padding: 5px;
+    background-color: gray;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin:20px;
+}
+
+.game-container {
+    position: relative;
+    width: 620px;
+    height:500px;
+    margin-top: 50px;
+    margin: 20px; 
+    border-style:solid;
+    border-bottom-color:green;
+}
+
+#pencil-lead {
+    width: 3px;
+    height: 3px;
+    background-color: gray;
+    transition: height 0.2s ease-in-out;
+    margin-left:50%;
+   
+}
+
+#computer-pencil {
+    position: absolute;  
+    width: 3px;
+    height: 3px;
+    background-color: red;
+    transition: height 0.2s ease-in-out;
+    margin-left:75%;
+   
+}
+
+#finish-line {
+    position:fixed; 
+    width: 300px;
+    height: 3px;
+    background-color: none;
+    transform:translate(0,40%);
+}
+#win-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: green;
+    display: none;
+}
+
+#reset-button {
+    visibility: hidden;
+    display: none;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
   
