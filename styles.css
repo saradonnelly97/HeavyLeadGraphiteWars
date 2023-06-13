@@ -4,27 +4,27 @@
   }
   
   body {
-    margin-left: 350px;
+    margin: 0;
     padding: 0;
     display: flex;
-    align-items: flex-start;
-    justify-content: left;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
     background-color: #f0f0f0;
     font-family: 'CustomFont', Arial, sans-serif;
 }
 
 .booty-cant-be-contained {
-  background-color: teal;
-  height: 500px; 
-  width: 330px;
-  margin-top:20px;
+    background-color: teal;
+    height: 500px;
+    width: 330px;
+    margin-top: 20px;
 }
 
 #extend-button {
     top: 10%;
     left: 25%;
-    margin-bottom:20px;
+    margin-bottom: 20px;
     width: 100px;
     height: 50px;
     background-color: gray;
@@ -35,59 +35,58 @@
     justify-content: center;
     font-weight: bold;
     font-size: 16px;
-    margin:20px;
+    margin: 20px;
 }
 
 .instructions {
-    width: 300px;
-    height: 300px;
-    padding: 5px;
+    width: 275px;
+    padding: 10px;
     background-color: gray;
     border-radius: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 11px;
     margin:20px;
 }
 
 .game-container {
     position: relative;
     width: 620px;
-    height:500px;
+    height: 500px;
     margin-top: 50px;
-    margin: 20px; 
-    border-style:solid;
-    border-bottom-color:green;
+    margin: 20px;
+    border-style: solid;
+    border-bottom-color: green;
 }
 
 #pencil-lead {
+    positition: relative;
     width: 3px;
     height: 3px;
     background-color: gray;
     transition: height 0.2s ease-in-out;
-    margin-left:50%;
-   
+    margin-left: 50%;
+  left: 0;
 }
 
 #computer-pencil {
     position: absolute;  
+    top: 0px;
     width: 3px;
     height: 3px;
     background-color: red;
-    transition: height 0.2s ease-in-out;
-    margin-left:75%;
-   
+    transition: height 300ms linear;
+  left: calc(65% + 5px);
 }
 
+
 #finish-line {
-    position:fixed; 
+    position: fixed;
     width: 300px;
     height: 3px;
     background-color: none;
-    transform:translate(0,40%);
+    transform: translate(0, 40%);
 }
+
 #win-message {
     position: absolute;
     top: 50%;
@@ -107,4 +106,3 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
-  
