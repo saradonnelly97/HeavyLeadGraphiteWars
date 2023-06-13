@@ -1,21 +1,37 @@
-var playerPencil = document.getElementById('pencil-lead');
-var extendButton = document.getElementById('extend-button');
-var resetButton = document.getElementById('reset-button');
-var winMessage = document.getElementById('win-message');
-var finishLinePosition = 500;
-var computerPencil = document.getElementById('computer-pencil');
+let playerPencil;
+let extendButton;
+let resetButton;
+let winMessage;
+let splashPage;
+let finishLinePosition = 500;
+let computerPencil;
 
-var playerPencilHeight = 0;
-var computerPencilHeight = 0;
-var computerPencilInterval;
+let playerPencilHeight = 0;
+let computerPencilHeight = 0;
+let computerPencilInterval;
 
-extendButton.addEventListener('click', function () {
-    var currentHeight = parseInt(playerPencil.style.height) || 0;
-    playerPencil.style.height = (currentHeight + 5) + 'px';
+window.addEventListener('DOMContentLoaded', function () {
+    playerPencil = document.getElementById('pencil-lead');
+    extendButton = document.getElementById('extend-button');
+    resetButton = document.getElementById('reset-button');
+    winMessage = document.getElementById('win-message');
+    splashPage = document.getElementById('splashPage');
+    computerPencil = document.getElementById('computer-pencil');
 
-    if (currentHeight >= finishLinePosition) {
-        winGame();
-    }
+    extendButton.addEventListener('click', function () {
+        let currentHeight = parseInt(playerPencil.style.height) || 0;
+        playerPencil.style.height = (currentHeight + 5) + 'px';
+
+        if (currentHeight >= finishLinePosition) {
+            winGame();
+        }
+    });
+
+    resetButton.addEventListener('click', function () {
+        resetGame();
+    });
+
+    startComputerPencil();
 });
 
 function startComputerPencil() {
@@ -47,10 +63,6 @@ function loseGame() {
     resetButton.style.display = 'block';
 }
 
-resetButton.addEventListener('click', function () {
-    resetGame();
-});
-
 function resetGame() {
     playerPencil.style.height = '3px';
     computerPencil.style.height = '3px';
@@ -63,4 +75,6 @@ function resetGame() {
     startComputerPencil(); // Start computer-pencil again
 }
 
-startComputerPencil();
+function hideSplashPage() {
+    splashPage.style.display = 'none';
+}

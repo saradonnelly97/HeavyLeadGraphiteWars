@@ -2,25 +2,30 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js"></script>
 </head>
 <title>Heavy Lead Graphite Wars</title>
 <body>
-    <div class="booty-cant-be-contained">
-     <button id="extend-button">Extend</button>
-    <div class="instructions">
-        Once upon a time, there was an artist who was tired of their mechanical pencil breaking every time they needed to take notes. As they were cursing their graphite for breaking, a little wizard man appeared -poof- in front of them. <b>I say!</b> roared the wizard-man. <b>If you really want a pencil whose graphite never tires, see if you're powerful enough to wield one first!</b>
-        <p>Defeat the magic pencil by reaching the finish line first. Click as quickly as you can, but beware! Click too fast and your graphite might break!</p>
+    <div id="splashPage" class="splash-page">
+        <h1>Heavy Lead Graphite Wars</h1>
+        <button class="continue-button" onclick="hideSplashPage()">Continue</button>
     </div>
-  </div>
+
+    <div class="booty-cant-be-contained">
+        <button id="extend-button">Extend</button>
+        <div class="instructions">
+            Once upon a time, there was an artist who was tired of their mechanical pencil breaking every time they needed to take notes. As they were cursing their graphite for breaking, a little wizard man appeared -poof- in front of them. <b>I say!</b> roared the wizard-man. <b>If you really want a pencil whose graphite never tires, see if you're powerful enough to wield one first!</b>
+            <p>Defeat the magic pencil by reaching the finish line first. Click as quickly as you can, but beware! Click too fast and your graphite might break!</p>
+        </div>
+    </div>
+
     <div class="game-container">
         <div id="pencil-lead"></div>
-      <div id="computer-pencil"></div>
+        <div id="computer-pencil"></div>
         <div id="finish-line"></div>
     </div>
 
     <div id="win-message">You Win!</div>
     <button id="reset-button">Reset Game</button>
-
-    <script src="script.js"></script>
 </body>
 </html>
