@@ -10,7 +10,7 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #dad8d8;
     font-family: 'CustomFont', Arial, sans-serif;
 }
 
@@ -52,9 +52,9 @@
     position: relative;
     width: 620px;
     height: 500px;
-    margin-top: 50px;
-    margin: 20px;
+    margin-top: 20px;
     border-style: solid;
+    background-color: white;
     border-bottom-color: green;
 }
 
