@@ -4,7 +4,7 @@ let extendButton;
 let resetButton;
 let winMessage;
 let splashPage;
-let finishLinePosition = 500;
+let finishLinePosition = 350;
 let computerPencil;
 
 let playerPencilHeight = 0;
@@ -18,6 +18,7 @@ window.addEventListener('DOMContentLoaded', function () {
     extendButton = document.getElementById('extend-button');
     resetButton = document.getElementById('reset-button');
     winMessage = document.getElementById('win-message');
+    loseMessage = document.getElementById('lose-message');
     splashPage = document.getElementById('splashPage');
     computerPencil = document.getElementById('computer-pencil');
 
@@ -71,6 +72,8 @@ function loseGame() {
     extendButton.style.visibility = 'hidden';
     resetButton.style.visibility = 'visible';
     resetButton.style.display = 'block';
+    loseMessage.style.display = 'block';
+
 }
 
 // Function to reset the game
@@ -80,6 +83,7 @@ function resetGame() {
     resetButton.style.visibility = 'hidden';
     extendButton.style.visibility = 'visible';
     winMessage.style.display = 'none';
+    loseMessage.style.display = 'none';
     playerPencilHeight = 0;
     computerPencilHeight = 0;
     clearInterval(computerPencilInterval);

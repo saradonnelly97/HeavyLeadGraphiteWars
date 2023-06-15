@@ -57,7 +57,6 @@ body {
     height: 50px;
     background-color: gray;
     border-radius: 25px;
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -83,36 +82,43 @@ body {
     margin-top: 20px;
     border-style: solid;
     background-color: white;
-    border-bottom-color: green;
 }
 
-#pencil-lead {
-    position: relative;
-    width: 3px;
-    height: 3px;
-    background-color: gray;
-    transition: height 0.2s ease-in-out;
-    margin-left: 50%;
+.game-container img { 
+    position: relative; 
+    margin-left: 37%; 
     left: 0;
+    z-index: 1;
+
+}
+#pencil-lead {
+    position: absolute;
+    width: 2px;
+    height: 3px;
+    background-color: black;
+    transition: height 0.2s ease-in-out;
+    margin-left: 49.8%;
+    top: 115px;
 }
 
 #computer-pencil {
     position: absolute;
     top: 0px;
-    width: 3px;
+    width: 2px;
     height: 3px;
-    background-color: red;
+    background-color: black;
     transition: height 300ms linear;
     left: calc(65% + 5px);
 }
 
 #finish-line {
     position: fixed;
-    width: 300px;
+    width: 620px;
     height: 3px;
-    background-color: none;
+    background-color: greenyellow;
     transform: translate(0, 40%);
 }
+
 
 #win-message {
     position: absolute;
@@ -122,6 +128,17 @@ body {
     font-size: 24px;
     font-weight: bold;
     color: green;
+    display: none;
+}
+
+#lose-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
     display: none;
 }
 
