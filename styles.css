@@ -84,13 +84,21 @@ body {
     background-color: white;
 }
 
-.game-container img { 
+#mechPen { 
     position: relative; 
     margin-left: 37%; 
     left: 0;
     z-index: 1;
 
 }
+
+#woodPen {
+    position: absolute; 
+    margin-left: calc(57% + 1px);
+    left: 0; 
+    z-index: 1;
+}
+
 #pencil-lead {
     position: absolute;
     width: 2px;
@@ -103,12 +111,12 @@ body {
 
 #computer-pencil {
     position: absolute;
-    top: 0px;
+    top: 116px;
     width: 2px;
-    height: 3px;
+    height: 0px;
     background-color: black;
     transition: height 300ms linear;
-    left: calc(65% + 5px);
+    margin-left: 70%
 }
 
 #finish-line {
