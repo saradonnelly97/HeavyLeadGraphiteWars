@@ -125,6 +125,7 @@ body {
     height: 3px;
     background-color: greenyellow;
     transform: translate(0, 40%);
+    visibility: hidden;
 }
 
 
