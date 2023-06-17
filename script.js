@@ -96,3 +96,7 @@ function hideSplashPage() {
 }
 
 //Click counter game determinations 
+let clicks = 0;
+let score = 0; 
+
+const scoreValue = document.getElementById('scoreValue');

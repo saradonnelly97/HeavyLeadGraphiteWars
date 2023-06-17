@@ -84,6 +84,8 @@ body {
     background-image: url(./assets/bg.png);
 }
 #scoreContainer {
+    position: absolute;
+    margin-left: 5%;
     margin-top: 10px;
 }
 
