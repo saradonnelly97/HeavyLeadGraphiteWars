@@ -94,3 +94,5 @@ function resetGame() {
 function hideSplashPage() {
     splashPage.style.display = 'none';
 }
+
+//Click counter game determinations 
