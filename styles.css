@@ -42,8 +42,8 @@ body {
     font-size: 16px;
 }
 
-.booty-cant-be-contained {
-    background-color: teal;
+.game-functionality-container {
+    background-color: rgb(113, 155, 52);
     height: 500px;
     width: 330px;
     margin-top: 20px;
@@ -82,6 +82,9 @@ body {
     margin-top: 20px;
     border-style: solid;
     background-image: url(./assets/bg.png);
+}
+#scoreContainer {
+    margin-top: 10px;
 }
 
 #mechPen { 
