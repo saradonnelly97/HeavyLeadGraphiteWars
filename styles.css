@@ -86,7 +86,7 @@ body {
 
 #mechPen { 
     position: relative; 
-    margin-left: 37%; 
+    margin-left: calc(36% + 5px); 
     left: 0;
     z-index: 1;
 
@@ -94,7 +94,7 @@ body {
 
 #woodPen {
     position: absolute; 
-    margin-left: calc(57% + 1px);
+    margin-left: calc(56% + 4px);
     left: 0; 
     z-index: 1;
 }
