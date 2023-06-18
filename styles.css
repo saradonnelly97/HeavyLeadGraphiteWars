@@ -14,7 +14,7 @@ body {
     font-family: 'CustomFont', Arial, sans-serif;
 }
 
-.splash-page {
+#splashPage {
     position: absolute;
     top: 0;
     left: 0;
@@ -28,28 +28,31 @@ body {
     z-index: 2;
 }
 
-.continue-button {
+#splashPage img {
+    height: 420px;
+    width: 430px;
+}
+
+.continueButton {
     margin-top: 20px;
     width: 150px;
     height: 50px;
     background-color: gray;
     border-radius: 25px;
-    cursor: pointer;
-    display: flex;
     align-items: center;
-    justify-content: center;
+    font-family: 'CustomFont', Arial, sans-serif;
     font-weight: bold;
     font-size: 16px;
 }
 
-.game-functionality-container {
+.gameElements {
     background-color: rgb(113, 155, 52);
     height: 500px;
     width: 330px;
     margin-top: 20px;
 }
 
-#extend-button {
+#extendButton {
     position: relative;
     left: 90px;
     margin: 20px;
@@ -72,7 +75,7 @@ body {
     margin: 20px;
 }
 
-.game-container {
+.gameContainer {
     position: relative;
     width: 620px;
     height: 500px;
@@ -80,7 +83,7 @@ body {
     border-style: solid;
     background-image: url(./assets/bg.png);
 }
-#scoreContainer {
+#score {
     position: absolute;
     margin-left: 5%;
     margin-top: 10px;
@@ -88,7 +91,7 @@ body {
 
 #mechPen { 
     position: relative; 
-    margin-left: calc(36% + 5px); 
+    margin-left: calc(33% + 2px); 
     left: 0;
     z-index: 1;
 
@@ -96,12 +99,12 @@ body {
 
 #woodPen {
     position: absolute; 
-    margin-left: calc(56% + 4px);
+    margin-left: calc(54% + 4px);
     left: 0; 
     z-index: 1;
 }
 
-#pencil-lead {
+#playerPencil {
     position: absolute;
     width: 2px;
     height: 3px;
@@ -111,7 +114,7 @@ body {
     top: 115px;
 }
 
-#computer-pencil {
+#cpuPencil {
     position: absolute;
     top: 116px;
     width: 2px;
@@ -130,34 +133,41 @@ body {
     visibility: hidden;
 }
 
-
-#win-message {
+#gaugeContainer {
+    width: 55px;
+    height: 200px;
+    background-color: #f2f2f2;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #gaugeValue {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 24px;
+    width: 100%;
+    height: 50%;
+    bottom: 1px;
+    background-color: #ff6347;
+    transform-origin: bottom;
+    transform: scaleY(0);
+    transition: transform 0.16s ease-in-out;
+  }
+  
+  #scoreContainer {
+    margin-top: 10px;
+  }
+  
+  #scoreValue {
     font-weight: bold;
-    color: green;
-    display: none;
-}
-
-#lose-message {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 24px;
+  }
+  
+  #messageContainer {
+    margin-top: 10px;
+  }
+  
+  #message {
     font-weight: bold;
-    color: red;
     display: none;
-}
-
-#reset-button {
-    visibility: hidden;
-    display: none;
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+  }
+  

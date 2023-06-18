@@ -1,12 +1,3 @@
-// Declare variables
-let playerPencil;
-let extendButton;
-let resetButton;
-let winMessage;
-let splashPage;
-let finishLinePosition = 350;
-let computerPencil;
-
 let playerPencilHeight = 0;
 let computerPencilHeight = 0;
 let computerPencilInterval;
@@ -14,32 +5,27 @@ let computerPencilInterval;
 // Wait for DOMContentLoaded event to ensure all elements are available in the DOM
 window.addEventListener('DOMContentLoaded', function () {
     // Get references to DOM elements
-    playerPencil = document.getElementById('pencil-lead');
-    extendButton = document.getElementById('extend-button');
-    resetButton = document.getElementById('reset-button');
-    winMessage = document.getElementById('win-message');
-    loseMessage = document.getElementById('lose-message');
+    playerPencil = document.getElementById('playerPencil');
+    extendButton = document.getElementById('extendButton');
     splashPage = document.getElementById('splashPage');
-    computerPencil = document.getElementById('computer-pencil');
+    computerPencil = document.getElementById('cpuPencil');
 
     // Add event listener to extend button
-    extendButton.addEventListener('click', function () {
-        let currentHeight = parseInt(playerPencil.style.height) || 0;
-        playerPencil.style.height = (currentHeight + 5) + 'px';
-
-        if (currentHeight >= finishLinePosition) {
-            winGame();
-        }
-    });
-
-    // Add event listener to reset button
-    resetButton.addEventListener('click', function () {
-        resetGame();
-    });
+    extendButton.addEventListener('click', extendPlayerPencil);
 
     // Start the computer pencil animation
     startComputerPencil();
 });
+
+// Function to extend the player pencil
+function extendPlayerPencil() {
+    let currentHeight = parseInt(playerPencil.style.height) || 0;
+    playerPencil.style.height = (currentHeight + 5) + 'px';
+
+    if (currentHeight >= finishLinePosition) {
+        winGame();
+    }
+}
 
 // Function to start the computer pencil animation
 function startComputerPencil() {
@@ -54,49 +40,8 @@ function startComputerPencil() {
     }, 100);
 }
 
-// Function to handle winning the game
-function winGame() {
-    playerPencil.style.height = finishLinePosition + 'px';
-    extendButton.style.visibility = 'hidden';
-    winMessage.style.display = 'block';
-
-    // Show reset button after a delay
-    setTimeout(function () {
-        resetButton.style.visibility = 'visible';
-        resetButton.style.display = 'block';
-    }, 3000);
-}
-
-// Function to handle losing the game
-function loseGame() {
-    extendButton.style.visibility = 'hidden';
-    resetButton.style.visibility = 'visible';
-    resetButton.style.display = 'block';
-    loseMessage.style.display = 'block';
-
-}
-
-// Function to reset the game
-function resetGame() {
-    playerPencil.style.height = '3px';
-    computerPencil.style.height = '3px';
-    resetButton.style.visibility = 'hidden';
-    extendButton.style.visibility = 'visible';
-    winMessage.style.display = 'none';
-    loseMessage.style.display = 'none';
-    playerPencilHeight = 0;
-    computerPencilHeight = 0;
-    clearInterval(computerPencilInterval);
-    startComputerPencil();
-}
 
 // Function to hide the splash page
 function hideSplashPage() {
     splashPage.style.display = 'none';
 }
-
-//Click counter game determinations 
-let clicks = 0;
-let score = 0; 
-
-const scoreValue = document.getElementById('scoreValue');
