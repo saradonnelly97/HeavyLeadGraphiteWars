@@ -52,6 +52,47 @@ body {
     margin-top: 20px;
 }
 
+.progressBar { 
+    background: #959595;
+    width: 300px;
+    height: 10px; 
+    border-radius: 5px;
+    align-items: center; 
+    justify-content: center;
+    margin-left: 20px;
+}
+
+.progressBar div {
+    height: 10px;
+    border-radius: 5px;
+    width: 50%; 
+    margin-top: 100px;
+}
+
+.progressBar div span {
+    height: 40px; 
+    width: 40px; 
+    border-radius: 50%;
+    background: rgb(113, 155, 52); 
+    float: right;
+    margin-top: -15px; 
+    margin-right: -20px;
+    color: #333; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    font-size: 11px;
+}
+
+.clickSpeed {
+    background: red;
+    animation: css 2s linear fowards;
+}
+
+.clickSpeed span {
+    border: 1px solid red; 
+}
+
 #extendButton {
     position: relative;
     left: 90px;
