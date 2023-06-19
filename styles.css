@@ -50,53 +50,79 @@ body {
     height: 500px;
     width: 330px;
     margin-top: 20px;
-}
-
-.progressBar { 
-    background: #959595;
-    width: 300px;
-    height: 10px; 
-    border-radius: 5px;
     align-items: center; 
     justify-content: center;
-    margin-left: 20px;
 }
 
-.progressBar div {
-    height: 10px;
-    border-radius: 5px;
-    width: 50%; 
-    margin-top: 100px;
-}
-
-.progressBar div span {
-    height: 40px; 
-    width: 40px; 
-    border-radius: 50%;
-    background: rgb(113, 155, 52); 
-    float: right;
-    margin-top: -15px; 
-    margin-right: -20px;
-    color: #333; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-    font-size: 11px;
-}
-
-.clickSpeed {
-    background: red;
-    animation: css 2s linear fowards;
-}
-
-.clickSpeed span {
-    border: 1px solid red; 
-}
-
-#extendButton {
-    position: relative;
+.skill {
+    width: 160px; 
+    height: 160px;
     left: 90px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.outer {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    padding: 20px;
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+                -6px -6px 10px -1px rgba(195, 234, 109, 0.7) 
+}
+
+.inner {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 4px 4px 6px -1px rgba(0, 4, 1, 0.762),
+                    inset -4px -4px 6px -1px rgba(132, 184, 77, 0.7),
+                        -0.5px -0.5px 0px rgb(20, 44, 20),
+                        0.5px 0.5px 0px rgba(84, 212, 80, 0.15),
+                        0px 12px 10px -10px rgba(58, 110, 54, 0.05);
+}
+
+#number {
+    font-weight: 2px; 
+    color: #555;
+}
+
+circle {
+    fill: none;
+    stroke: url(#GradientColor);
+    stroke-width: 20px;
+    stroke-dasharray: 472;
+    stroke-dashoffset: 472;
+    animation: anim 2s linear forwards;
+}
+
+svg{
+    position: relative;
+    top: -160px; 
+    left: 90px;
+}
+
+@keyframes anim {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+#clickArea {
+    position: absolute;
+    left: 222px;
+    margin-top: 0px;
+    height: 190px;
+    width: 60px;
+    border: solid red 1px;
+    z-index: 2;
+}
+#goButton {
+    left: -70px;
     margin: 20px;
+    top: -100px;
     width: 100px;
     height: 50px;
     background-color: gray;
@@ -104,6 +130,15 @@ body {
     align-items: center;
     font-family: 'CustomFont', Arial, sans-serif;
     font-size: 14px;
+}
+
+#goButton:hover {
+background-color: rgba(195, 234, 109, 0.7)
+}
+
+#goButton:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+                inset 2px 2px 3px rgba(0,0,0,0.5) 
 }
 
 .instructions {
@@ -124,23 +159,19 @@ body {
     border-style: solid;
     background-image: url(./assets/bg.png);
 }
-#score {
-    position: absolute;
-    margin-left: 5%;
-    margin-top: 10px;
-}
 
 #mechPen { 
     position: relative; 
-    margin-left: calc(33% + 2px); 
+    margin-left: 150px; 
     left: 0;
     z-index: 1;
 
 }
 
 #woodPen {
-    position: absolute; 
-    margin-left: calc(54% + 4px);
+    position: absolute;
+    margin-top: 0px; 
+    margin-left: calc(54% + 0px);
     left: 0; 
     z-index: 1;
 }
@@ -157,7 +188,7 @@ body {
 
 #cpuPencil {
     position: absolute;
-    top: 116px;
+    top: -113px;
     width: 2px;
     height: 0px;
     background-color: black;
@@ -173,42 +204,3 @@ body {
     transform: translate(0, 40%);
     visibility: hidden;
 }
-
-#gaugeContainer {
-    width: 55px;
-    height: 200px;
-    background-color: #f2f2f2;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  #gaugeValue {
-    position: absolute;
-    width: 100%;
-    height: 50%;
-    bottom: 1px;
-    background-color: #ff6347;
-    transform-origin: bottom;
-    transform: scaleY(0);
-    transition: transform 0.16s ease-in-out;
-  }
-  
-  #scoreContainer {
-    margin-top: 10px;
-  }
-  
-  #scoreValue {
-    font-weight: bold;
-  }
-  
-  #messageContainer {
-    margin-top: 10px;
-  }
-  
-  #message {
-    font-weight: bold;
-    display: none;
-  }
-  

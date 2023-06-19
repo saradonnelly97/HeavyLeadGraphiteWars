@@ -12,16 +12,33 @@
     </div>
 
     <div class="gameElements">
-      <div class="progressBar">
-          <div class="clickSpeed"><span>32%</span></div> 
-      </div>
-        <button id="extendButton">PH</button>
+        <div class="skill">
+          <div class="outer">
+            <div class="inner">
+              <div id="number">
+                32%
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+          <defs>
+             <linearGradient id="GradientColor">
+                <stop offset="0%" stop-color="#8bac0f" />
+                <stop offset="100%" stop-color="#0f380f" />
+             </linearGradient>
+          </defs>
+          <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+  </svg>
+        <button id="goButton">Go!</button>
+        Timer: <span id="timer"></span><br/>
+        Score: <span id="score"></span><br/>
+        Clicks/s: <span id="clicks"></span>
     </div>
 
     <div class="gameContainer">
-        <div id="score">
-            Score: <span id="scoreValue">0</span>
-        </div>
+      <div id="clickArea"></div>
         <img src="./assets/mechPenc.png" alt="Pixel art of a mechanical pencil." id="mechPen">
         <img src="./assets/CPUPenci.png" alt="Pixel art of a wooden pencil." id="woodPen">
         <div id="playerPencil"></div>
