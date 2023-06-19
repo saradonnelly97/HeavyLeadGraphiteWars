@@ -97,9 +97,29 @@ clickArea.addEventListener("click", function() {
         score++;
         scoreTxt.textContent = score;
     }
+    animateCircle();
 });
 
 // Function to hide the splash page
 function hideSplashPage() {
     splashPage.style.display = 'none';
 }
+
+// Function to animate the circle based on click speed
+function animateCircle() {
+    let circle = document.getElementById('circle');
+    let now = performance.now();
+    let clickTimes = circle.dataset.clickTimes || [];
+    clickTimes.push(now);
+    circle.dataset.clickTimes = clickTimes;
+  
+    if (clickTimes.length > 1) {
+      let prevClickTime = clickTimes[clickTimes.length - 2];
+      let duration = now - prevClickTime;
+      circle.style.animationDuration = duration + 'ms';
+    }
+  
+    circle.style.animation = '';
+    void circle.offsetWidth; // Restart the animation by triggering a reflow
+    circle.style.animation = 'anim 2s linear forwards';
+  }
