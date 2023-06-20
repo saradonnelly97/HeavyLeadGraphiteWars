@@ -5,6 +5,9 @@ var startTime;
 var ended = true;
 var clicks;
 var startTimestamp;
+let computerPencilHeight = 0;
+let computerPencilInterval;
+var finishLinePosition = 500;
 
 var timerTxt = document.getElementById("timer");
 var scoreTxt = document.getElementById("score");
@@ -12,6 +15,8 @@ var clicksTxt = document.getElementById("clicks");
 var goButton = document.getElementById("goButton");
 var clickArea = document.getElementById("clickArea");
 var skillValue = document.getElementById("skillValue")
+var playerPencil = document.getElementById("playerPencil")
+var cpuPencil = document.getElementById("cpuPencil")
 
 var show = function(elem) {
     elem.style.display = 'inline';
@@ -58,9 +63,9 @@ clickArea.addEventListener("click", function() {
     if (!ended) {
         score++;
         scoreTxt.textContent = score;
+        handleClick();
+        startComputerPencil();
     }
-    handleClick();
-    updateGauge(timestamp);
 });
 
 function handleClick() {
@@ -92,3 +97,19 @@ function handleClick() {
 function hideSplashPage() {
     splashPage.style.display = 'none';
 }
+
+function startComputerPencil() {
+    if (computerPencilInterval) {
+      clearInterval(computerPencilInterval);
+    }
+  
+    computerPencilInterval = setInterval(function() {
+      computerPencilHeight += 2;
+      cpuPencil.style.height = computerPencilHeight + "px";
+  
+      if (computerPencilHeight >= finishLinePosition) {
+        clearInterval(computerPencilInterval);
+        loseGame(); // Define the loseGame() function according to your requirements
+      }
+    }, 100);
+  }

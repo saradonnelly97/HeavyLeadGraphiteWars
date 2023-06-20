@@ -53,6 +53,7 @@ body {
     margin-top: 20px;
     align-items: center; 
     justify-content: center;
+    border: solid gold 3px;
 }
 
 .skill {
@@ -156,12 +157,12 @@ background-color: rgba(195, 234, 109, 0.7)
 
 #cpuPencil {
     position: absolute;
-    top: -113px;
-    width: 2px;
+    top: 0px;
+    width: 3px;
     height: 0px;
     background-color: black;
     transition: height 300ms linear;
-    margin-left: 70%
+    margin-left: calc(69% + 1px);
 }
 
 #finish-line {
