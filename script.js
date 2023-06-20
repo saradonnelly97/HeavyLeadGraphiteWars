@@ -119,8 +119,7 @@ function startPlayerPencil() {
     }
 }
 
-var music = document.getElementById("music");
-var music2 = document.getElementById("music2")
+
 
 function startMusic() {
   music.play();
@@ -128,6 +127,11 @@ function startMusic() {
 function startMuusic() {
     music2.play();
 }
+function startMuuusic() {
+    music3.play();
+}
+
+
 function hideSplashPage() {
   var splashPage = document.getElementById("splashPage");
   splashPage.style.display = "none";
