@@ -1,12 +1,13 @@
 let score;
-let duration = 5;
+let duration = 20;
 let startTime;
 let ended = true;
 let clicks;
 let startTimestamp;
+
 let computerPencilHeight = 0;
 let computerPencilInterval;
-let finishLinePosition = 500;
+let finishLinePosition = 50;
 let playerPencilHeight = 0; 
 
 var timerTxt = document.getElementById("timer");
@@ -17,11 +18,12 @@ var clickArea = document.getElementById("clickArea");
 var skillValue = document.getElementById("skillValue")
 var playerPencilLead = document.getElementById("playerPencilLead")
 var cpuPencilLead = document.getElementById("cpuPencilLead")
+var winMessage = document.getElementById("win-message");
 
 var show = function(elem) {
     elem.style.display = 'inline';
 };
-
+h
 var hide = function(elem) {
     elem.style.display = 'none';
 };
@@ -79,7 +81,7 @@ function handleClick() {
     clicks++;
   }
   
-  function updateGauge(timestamp) {
+    function updateGauge(timestamp) {
     const elapsedTime = timestamp - startTimestamp;
     const scale = Math.min(elapsedTime / 2000, 1);
     skillValue.style.transform = `scaleY(${scale})`;
@@ -119,6 +121,15 @@ function startPlayerPencil() {
     }
 }
 
+function winGame() {
+    playerPencilLead.style.height = finishLinePosition + 'px';
+    winMessage.style.display = 'block';
+
+    setTimeout(function () {
+        resetButton.style.visibility = 'visible';
+        resetButton.style.display = 'block';
+    }, 3000);
+}
 
 
 function startMusic() {

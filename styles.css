@@ -190,5 +190,17 @@ background-color: rgba(195, 234, 109, 0.7)
     height: 3px;
     background-color: greenyellow;
     transform: translate(0, 40%);
-    visibility: hidden;
+
+}
+
+#win-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: green;
+    display: none;
+    z-index: 9999;
 }
