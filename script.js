@@ -1,13 +1,13 @@
-
-var score;
-var duration = 25;
-var startTime;
-var ended = true;
-var clicks;
-var startTimestamp;
+let score;
+let duration = 5;
+let startTime;
+let ended = true;
+let clicks;
+let startTimestamp;
 let computerPencilHeight = 0;
 let computerPencilInterval;
-var finishLinePosition = 500;
+let finishLinePosition = 500;
+let playerPencilHeight = 0; 
 
 var timerTxt = document.getElementById("timer");
 var scoreTxt = document.getElementById("score");
@@ -15,8 +15,8 @@ var clicksTxt = document.getElementById("clicks");
 var goButton = document.getElementById("goButton");
 var clickArea = document.getElementById("clickArea");
 var skillValue = document.getElementById("skillValue")
-var playerPencil = document.getElementById("playerPencil")
-var cpuPencil = document.getElementById("cpuPencil")
+var playerPencilLead = document.getElementById("playerPencilLead")
+var cpuPencilLead = document.getElementById("cpuPencilLead")
 
 var show = function(elem) {
     elem.style.display = 'inline';
@@ -93,11 +93,6 @@ function handleClick() {
     }
   }
    
-// Function to hide the splash page
-function hideSplashPage() {
-    splashPage.style.display = 'none';
-}
-
 function startComputerPencil() {
     if (computerPencilInterval) {
       clearInterval(computerPencilInterval);
@@ -105,7 +100,7 @@ function startComputerPencil() {
   
     computerPencilInterval = setInterval(function() {
       computerPencilHeight += 2;
-      cpuPencil.style.height = computerPencilHeight + "px";
+      cpuPencilLead.style.height = computerPencilHeight + "px";
   
       if (computerPencilHeight >= finishLinePosition) {
         clearInterval(computerPencilInterval);
@@ -113,3 +108,17 @@ function startComputerPencil() {
       }
     }, 100);
   }
+
+var music = document.getElementById("music");
+var music2 = document.getElementById("music2")
+
+function startMusic() {
+  music.play();
+}
+function startMuusic() {
+    music2.play();
+}
+function hideSplashPage() {
+  var splashPage = document.getElementById("splashPage");
+  splashPage.style.display = "none";
+}

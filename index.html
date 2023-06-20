@@ -6,9 +6,12 @@
 </head>
 <title>Heavy Lead Graphite Wars</title>
 <body>
+  <audio id="music2" src="./assets/SE_00_22.wav"></audio>
+  <audio id="music" src="./assets/Startup.mp3"></audio>
     <div id="splashPage">
         <img src="./assets/titleimg1.gif" alt="Green title reading Heavy Lead Graphite Wars">
-        <button class="continueButton" onclick="hideSplashPage()">Continue</button>
+        <button class="continueButton" onclick="hideSplashPage(); startMusic()">Continue</button>
+
     </div>
 
     <div class="gameElements">
@@ -24,12 +27,18 @@
     </div>
 
     <div class="gameContainer">
-      <div id="clickArea"></div>
+      <div class="playerPencil">
+        <div id="clickArea" onclick="startMuusic()"></div> 
         <img src="./assets/mechPenc.png" alt="Pixel art of a mechanical pencil." id="mechPen">
+        <div id="playerPencilLead"></div>   
+      </div>
+      
+      <div class="cpuPencil">
         <img src="./assets/CPUPenci.png" alt="Pixel art of a wooden pencil." id="woodPen">
-        <div id="playerPencil"></div>
-        <div id="cpuPencil"></div>
-        <div id="finish-line"></div>
+        <div id="cpuPencilLead"> </div>
+      </div>
+
+      <div id="finish-line"></div>
     </div>
 </body>
 </html>

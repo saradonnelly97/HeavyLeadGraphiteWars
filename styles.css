@@ -83,7 +83,7 @@ body {
     margin-top: 0px;
     height: 190px;
     width: 60px;
-    border: none;
+    border: solid red 1px;
     z-index: 2;
 }
 
@@ -139,13 +139,13 @@ background-color: rgba(195, 234, 109, 0.7)
 
 #woodPen {
     position: absolute;
-    margin-top: 0px; 
+    top: 0px; 
     margin-left: calc(54% + 0px);
     left: 0; 
     z-index: 1;
 }
 
-#playerPencil {
+#playerPencilLead {
     position: absolute;
     width: 2px;
     height: 3px;
@@ -155,7 +155,7 @@ background-color: rgba(195, 234, 109, 0.7)
     top: 115px;
 }
 
-#cpuPencil {
+#cpuPencilLead {
     position: absolute;
     top: 0px;
     width: 3px;
