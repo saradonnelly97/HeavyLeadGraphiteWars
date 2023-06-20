@@ -41,7 +41,7 @@ button:active {
     height: 530px;
     background-color: yellowgreen;
     border: 1px solid rgb(113, 155, 52);
-    display: flex;
+    display: inline-block;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -49,7 +49,7 @@ button:active {
 }
 
 #splashPage img {
-    margin-top: 45px;
+    margin-top: 10px;
     height: 420px;
     width: 430px;
 }
