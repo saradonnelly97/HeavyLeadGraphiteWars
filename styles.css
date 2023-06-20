@@ -14,13 +14,33 @@ body {
     font-family: 'CustomFont', Arial, sans-serif;
 }
 
+button {
+    margin-top: 20px;
+    width: 150px;
+    height: 50px;
+    background-color: gray;
+    border-radius: 25px;
+    align-items: center;
+    font-family: 'CustomFont', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+button:hover {
+    background-color: rgba(195, 234, 109, 0.7)
+    }
+    
+button:active {
+        box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+                    inset 2px 2px 3px rgba(0,0,0,0.5) 
+    }
+
 #splashPage {
     position: absolute;
-    top: 190px;
-    left: 460px;
-    width: 960px;
+    width: 965px;
     height: 530px;
     background-color: yellowgreen;
+    border: 1px solid rgb(113, 155, 52);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,16 +54,16 @@ body {
     width: 430px;
 }
 
-.continueButton {
-    margin-top: 20px;
-    width: 150px;
-    height: 50px;
-    background-color: gray;
-    border-radius: 25px;
+#instructionManual {
+    position: absolute;
+    width: 965px;
+    height: 530px;
+    background-color: yellowgreen;
+    display: flex;
     align-items: center;
-    font-family: 'CustomFont', Arial, sans-serif;
-    font-weight: bold;
-    font-size: 16px;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1;
 }
 
 .gameElements {

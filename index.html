@@ -3,15 +3,27 @@
 <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="script.js" defer></script>
+    <audio id="music2" src="./assets/SE_00_22.wav"></audio>
+    <audio id="music" src="./assets/Startup.mp3"></audio>
 </head>
 <title>Heavy Lead Graphite Wars</title>
+<link rel="icon" type="image/x-icon" href="./assets/titleimg1.gif">
 <body>
-  <audio id="music2" src="./assets/SE_00_22.wav"></audio>
-  <audio id="music" src="./assets/Startup.mp3"></audio>
+
+
     <div id="splashPage">
         <img src="./assets/titleimg1.gif" alt="Green title reading Heavy Lead Graphite Wars">
-        <button class="continueButton" onclick="hideSplashPage(); startMusic()">Continue</button>
+        <button class="startGame" onclick="hideSplashPage(); startMusic(); hideInstructionManual()">Start Game</button>
+        <button class="instructionManual" onclick="toggleInstructionManual()">Instructions</button>
+    </div>
 
+    <div id="instructionManual" style="z-index: 1;">
+      <div class="instructions">
+        Once upon a time, there was an artist who was tired of their mechanical pencil breaking every time they needed to take notes. As they were cursing their graphite for breaking, a little wizard man appeared -poof- in front of them. <b>I say!</b> roared the wizard-man. <b>If you really want a pencil whose graphite never tires, see if you're powerful enough to wield one first!</b>
+        <p>Defeat the magic pencil by reaching the finish line first. Click as quickly as you can, but beware! Click too fast and your graphite might break!</p>
+        <button class="startGame" onclick="hideSplashPage(); startMusic(); hideInstructionManual()">Start Game</button>
+        <button class="returnToTitle" onclick="returnToTitle()">Title Screen</button>
+    </div>
     </div>
 
     <div class="gameElements">

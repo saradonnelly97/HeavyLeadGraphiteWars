@@ -132,3 +132,23 @@ function hideSplashPage() {
   var splashPage = document.getElementById("splashPage");
   splashPage.style.display = "none";
 }
+function returnToTitle() {
+    var splashPage = document.getElementById("splashPage");
+    var instructionManual = document.getElementById("instructionManual");
+    instructionManual.style.zIndex = "1";
+
+}  
+function hideInstructionManual() {
+    var instructionManual = document.getElementById("instructionManual");
+    instructionManual.style.display = "none";
+  }
+
+function toggleInstructionManual() {
+  var instructionManual = document.getElementById("instructionManual");
+  
+  if (instructionManual.style.zIndex === "1") {
+    instructionManual.style.zIndex = "4";
+  } else {
+    instructionManual.style.zIndex = "1";
+  }
+}
