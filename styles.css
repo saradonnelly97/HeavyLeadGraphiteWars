@@ -134,7 +134,6 @@ background-color: rgba(195, 234, 109, 0.7)
     margin-left: 150px; 
     left: 0;
     z-index: 1;
-
 }
 
 #woodPen {
@@ -147,12 +146,12 @@ background-color: rgba(195, 234, 109, 0.7)
 
 #playerPencilLead {
     position: absolute;
-    width: 2px;
+    width: 3px;
     height: 3px;
     background-color: black;
     transition: height 0.2s ease-in-out;
-    margin-left: 49.8%;
-    top: 115px;
+    margin-left: calc(40% + 3px);
+    top: 186px;
 }
 
 #cpuPencilLead {

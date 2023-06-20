@@ -65,6 +65,7 @@ clickArea.addEventListener("click", function() {
         scoreTxt.textContent = score;
         handleClick();
         startComputerPencil();
+        startPlayerPencil();
     }
 });
 
@@ -108,6 +109,15 @@ function startComputerPencil() {
       }
     }, 100);
   }
+
+function startPlayerPencil() {
+    let currentHeight = parseInt(playerPencilLead.style.height) || 0;
+    playerPencilLead.style.height = (currentHeight + 5) + 'px';
+
+    if (currentHeight >= finishLinePosition) {
+        winGame();
+    }
+}
 
 var music = document.getElementById("music");
 var music2 = document.getElementById("music2")
