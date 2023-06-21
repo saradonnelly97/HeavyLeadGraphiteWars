@@ -103,7 +103,6 @@ button:active {
     margin-top: 0px;
     height: 190px;
     width: 60px;
-    border: solid red 1px;
     z-index: 2;
 }
 
