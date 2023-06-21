@@ -223,4 +223,3 @@ function toggleInstructionManual() {
     instructionManual.style.zIndex = "1";
   }
 }
-p
