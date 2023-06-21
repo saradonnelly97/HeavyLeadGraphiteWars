@@ -34,11 +34,11 @@ var hide = function(elem) {
 
 
 
-function titleMusic() {
-    var audio = new Audio('./assets/pencilclickergame.wav');
-    audio.play();
-    audio.loop = true;
-  }
+// function titleMusic() {
+//     var audio = new Audio('./assets/pencilclickergame.wav');
+//     audio.play();
+//     audio.loop = true;
+//   }
 
 // function which activates the game timer
 function timer() {
