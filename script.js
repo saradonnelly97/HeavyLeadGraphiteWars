@@ -31,6 +31,14 @@ var hide = function(elem) {
     elem.style.display = 'none';
 };
 
+
+
+function titleMusic() {
+    var audio = new Audio('./assets/pencilclickergame.wav');
+    audio.play();
+    audio.loop = true;
+  }
+
 function timer() {
     hide(goButton);
     score = -1;
@@ -47,7 +55,7 @@ function timer() {
             timeOutGame();
         }
     }, 1);
-        return total;
+        //return total;
 }
 
 function endGame() {
@@ -71,6 +79,7 @@ function playerWinGame() {
         resetButton.style.display = 'block';
     }, 3000);
     endGame();
+    startMuuuuusic();
 }
 
 function timeOutGame() {
@@ -84,6 +93,7 @@ function timeOutGame() {
         resetButton.style.visibility = 'visible';
         resetButton.style.display = 'block';
     }, 3000); 
+    startMuuuuuusic();
 
 }
 var cpuWinner = false;
@@ -102,6 +112,7 @@ function cpuWinGame() {
         resetButton.style.display = 'block';
     }, 3000); 
     endGame();
+    startMuuuuuusic();
 }
 
 resetButton.addEventListener('click', function () {
@@ -138,26 +149,26 @@ function handleClick() {
     if (!startTimestamp) {
       startTimestamp = performance.now();
       skillValue.style.transform = 'scaleY(0)';
-      requestAnimationFrame(updateGauge);
+      //requestAnimationFrame(updateGauge);
     }
     
     clicks++;
   }
   
-    function updateGauge(timestamp) {
-    const elapsedTime = timestamp - startTimestamp;
-    const scale = Math.min(elapsedTime / 2000, 1);
-    skillValue.style.transform = `scaleY(${scale})`;
+//     function updateGauge(timestamp) {
+//     const elapsedTime = timestamp - startTimestamp;
+//     const scale = Math.min(elapsedTime / 2000, 1);
+//     skillValue.style.transform = `scaleY(${scale})`;
     
-    if (scale < 1) {
-      requestAnimationFrame(updateGauge);
-    } else {
-      const clicksPerTwoSeconds = Math.round((clicks / elapsedTime) * 1000);
-      startTimestamp = null;
-      clicks = 0;
-      skillValue.style.transform = 'scaleY(0)';
-    }
-  }
+//     if (scale < 1) {
+//       requestAnimationFrame(updateGauge);
+//     } else {
+//       const clicksPerTwoSeconds = Math.round((clicks / elapsedTime) * 1000);
+//       startTimestamp = null;
+//       clicks = 0;
+//       skillValue.style.transform = 'scaleY(0)';
+//     }
+//   }
   
 function startComputerPencil() {
     if (computerPencilInterval) {
@@ -234,16 +245,14 @@ function startMuuusic() {
 function startMuuuusic() {
     music4.play();
 }
+function startMuuuuusic() {
+    music5.play();
+}
+function startMuuuuuusic() {
+    music6.play();
+}
 
-window.onload = function() {
-    titleMusic();
-  }
   
-function titleMusic() {
-    var audio = new Audio('./assets/pencilclickergame.wav');
-    audio.play();
-    audio.loop = true;
-  }
 
 function hideSplashPage() {
   var splashPage = document.getElementById("splashPage");
