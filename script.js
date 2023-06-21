@@ -1,5 +1,5 @@
 let score;
-let duration = 15;
+let duration = 30;
 let startTime;
 let ended = true;
 let clicks;
@@ -7,7 +7,7 @@ let startTimestamp;
 
 let computerPencilHeight = 0;
 let computerPencilInterval;
-let finishLinePosition = 316;
+let finishLinePosition = 314;
 
 var timerTxt = document.getElementById("timer");
 var scoreTxt = document.getElementById("score");
@@ -20,6 +20,7 @@ var playerPencilLead = document.getElementById("playerPencilLead");
 var cpuPencilLead = document.getElementById("cpuPencilLead");
 var winMessage = document.getElementById("win-message");
 var loseMessage = document.getElementById("lose-message");
+var timeOutMessage = document.getElementById("timeout-message");
 
 var show = function(elem) {
     elem.style.display = 'inline';
@@ -29,7 +30,7 @@ var hide = function(elem) {
     elem.style.display = 'none';
 };
 
-function startGame() {
+function timer() {
     hide(goButton);
     score = -1;
     ended = false;
@@ -43,30 +44,61 @@ function startGame() {
         else {
             ended = true;
             clearInterval(timerId);          
-            loseGame();
+            timeOutGame();
         }
     }, 1);
 }
 
-function winGame() {
+//  function timeStop() {
+//      if (cpuWinGame() = true) {
+//          clearInterval(timerId);
+//      }
+//  }
+
+
+function playerWinGame() {
     playerPencilLead.style.height = finishLinePosition + 'px';
+    cpuPencilLead.style.height = '0px';
+    playerWinner = true;
+    cpuWinner = false;
     winMessage.style.display = 'block';
-    cpuPencilLead.style.height = 0;
 
     setTimeout(function () {
         resetButton.style.visibility = 'visible';
         resetButton.style.display = 'block';
     }, 3000);
+    return playerWinner;
 }
 
-function loseGame() {
-    cpuPencilLead.style.height = finishLinePosition + 'px';
-    loseMessage.style.display = 'block';
-    cpuPencilLead.style.height = 0;
+function timeOutGame() {
+    if(ended == true){
+        playerPencilLead.style.height = 0;
+        clearInterval(computerPencilInterval);
+        timeOutMessage.style.display = 'block';
+        }
+
     setTimeout(function () {
         resetButton.style.visibility = 'visible';
         resetButton.style.display = 'block';
-    }, 3000);
+    }, 3000); 
+
+}
+var cpuWinner = false;
+var playerWinner = false;
+
+function cpuWinGame() {
+    if(cpuPencilLead.style.height == finishLinePosition + 'px'){
+    clearInterval(computerPencilInterval);
+    cpuWinner = true;
+    playerWinner = false;
+    loseMessage.style.display = 'block';
+    }
+
+    setTimeout(function () {
+        resetButton.style.visibility = 'visible';
+        resetButton.style.display = 'block';
+    }, 3000); 
+    return cpuWinner;
 }
 
 resetButton.addEventListener('click', function () {
@@ -75,18 +107,18 @@ resetButton.addEventListener('click', function () {
 
 function resetGame() {
     playerPencilLead.style.height = '3px';
-    cpuPencilLead.style.height = '3px';
     resetButton.style.visibility = 'hidden';
     winMessage.style.display = 'none';
     loseMessage.style.display = 'none';
-    computerPencilHeight = 0;  
+    timeOutMessage.style.display = 'none';
+    computerPencilHeight = 0;
+    cpuPencilLead.style.transition = 'none';  
     clearInterval(computerPencilInterval);
-    startComputerPencil();
-    startGame();
+    timer();
 }
 
 goButton.addEventListener("click", function() {
-    startGame();
+    timer();
 });
 
 clickArea.addEventListener("click", function() {
@@ -132,18 +164,20 @@ function startComputerPencil() {
     computerPencilInterval = setInterval(function() {
       computerPencilHeight += 2;
       cpuPencilLead.style.height = computerPencilHeight + "px";
+
+      if (computerPencilHeight >= finishLinePosition) {
+        clearInterval(computerPencilInterval);
+        computerPencilHeight +=0;
+        cpuWinGame();
+      } 
+      else if(playerPencilLead >= finishLinePosition) { 
+        computerPencilHeight += 0;
+        playerWinGame()
+      }
   
     }, 100);
 
-    if (computerPencilHeight >= finishLinePosition) {
-        clearInterval(computerPencilInterval);
-        computerPencilHeight.style.height = 0;
-        loseGame(); // Define the loseGame() function according to your requirements
-      } 
-      else if(playerPencilLead >= finishLinePosition) { 
-        computerPencilHeight.style.height=0
-        winGame()
-      }
+
   }
 
 function startPlayerPencil() {
@@ -151,7 +185,7 @@ function startPlayerPencil() {
     playerPencilLead.style.height = (currentHeight + 5) + 'px';
 
     if (currentHeight >= finishLinePosition) {
-        winGame();
+        playerWinGame();
     }
 }
 
@@ -204,7 +238,6 @@ function hideSplashPage() {
   splashPage.style.display = "none";
 }
 function returnToTitle() {
-    var splashPage = document.getElementById("splashPage");
     var instructionManual = document.getElementById("instructionManual");
     instructionManual.style.zIndex = "1";
 

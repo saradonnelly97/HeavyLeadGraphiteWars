@@ -176,7 +176,7 @@ background-color: rgba(195, 234, 109, 0.7)
 
 #cpuPencilLead {
     position: absolute;
-    top: 0px;
+    top: 186px;
     width: 3px;
     height: 0px;
     background-color: black;
@@ -207,6 +207,18 @@ background-color: rgba(195, 234, 109, 0.7)
 }
 
 #lose-message {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+    display: none;
+}
+
+#timeout-message {
     display: none;
     position: absolute;
     top: 50%;
