@@ -1,5 +1,5 @@
 let score;
-let duration = 20;
+let duration = 15;
 let startTime;
 let ended = true;
 let clicks;
@@ -39,10 +39,11 @@ function startGame() {
 
         if (total < duration) {
             timerTxt.textContent = total.toFixed(2);
-        } else {
+        } 
+        else {
             ended = true;
             clearInterval(timerId);          
-            endGame();
+            loseGame();
         }
     }, 1);
 }
@@ -50,6 +51,7 @@ function startGame() {
 function winGame() {
     playerPencilLead.style.height = finishLinePosition + 'px';
     winMessage.style.display = 'block';
+    cpuPencilLead.style.height = 0;
 
     setTimeout(function () {
         resetButton.style.visibility = 'visible';
@@ -60,7 +62,7 @@ function winGame() {
 function loseGame() {
     cpuPencilLead.style.height = finishLinePosition + 'px';
     loseMessage.style.display = 'block';
-
+    cpuPencilLead.style.height = 0;
     setTimeout(function () {
         resetButton.style.visibility = 'visible';
         resetButton.style.display = 'block';
@@ -131,11 +133,17 @@ function startComputerPencil() {
       computerPencilHeight += 2;
       cpuPencilLead.style.height = computerPencilHeight + "px";
   
-      if (computerPencilHeight >= finishLinePosition) {
-        clearInterval(computerPencilInterval);
-        loseGame(); // Define the loseGame() function according to your requirements
-      }
     }, 100);
+
+    if (computerPencilHeight >= finishLinePosition) {
+        clearInterval(computerPencilInterval);
+        computerPencilHeight.style.height = 0;
+        loseGame(); // Define the loseGame() function according to your requirements
+      } 
+      else if(playerPencilLead >= finishLinePosition) { 
+        computerPencilHeight.style.height=0
+        winGame()
+      }
   }
 
 function startPlayerPencil() {
@@ -147,6 +155,7 @@ function startPlayerPencil() {
     }
 }
 
+
 function trackClicksPerSecond() {
     let clicks = 0;
     let timerId;
@@ -157,7 +166,12 @@ function trackClicksPerSecond() {
     }
 
     function resetClicks() {
-        console.log('clicks per second: ', clicks),
+        console.log('clicks per second: ', clicks);
+        if (clicks >= 7) {
+        playerPencilLead.style.height = 0;
+        playerPencilLead.style.transition = 'none';
+        startMuuuusic();
+        }
         clicks = 0
     }
     function trackClick() { 
@@ -166,9 +180,10 @@ function trackClicksPerSecond() {
     const trackedElement = document.getElementById('clickArea');
     trackedElement.addEventListener('click', trackClick);
     startTimer();
+    return clicks;
 }
-trackClicksPerSecond();
 
+trackClicksPerSecond();
 
 function startMusic() {
   music.play();
@@ -178,6 +193,9 @@ function startMuusic() {
 }
 function startMuuusic() {
     music3.play();
+}
+function startMuuuusic() {
+    music4.play();
 }
 
 
@@ -205,3 +223,4 @@ function toggleInstructionManual() {
     instructionManual.style.zIndex = "1";
   }
 }
+p
