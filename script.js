@@ -8,7 +8,6 @@ let startTimestamp;
 let computerPencilHeight = 0;
 let computerPencilInterval;
 let finishLinePosition = 316;
-let playerPencilHeight = 0; 
 
 var timerTxt = document.getElementById("timer");
 var scoreTxt = document.getElementById("score");
@@ -78,23 +77,11 @@ function resetGame() {
     resetButton.style.visibility = 'hidden';
     winMessage.style.display = 'none';
     loseMessage.style.display = 'none';
-    playerPencilHeight = 0;
-    computerPencilHeight = 0;
+    computerPencilHeight = 0;  
     clearInterval(computerPencilInterval);
     startComputerPencil();
     startGame();
 }
-
-//function endGame() {
-//    var clicksBySec = (score / duration).toFixed(2);
-//    timerTxt.textContent = duration.toFixed(3);
-//    clicksTxt.textContent = clicksBySec;
-//    show(goButton);
-
-//    setTimeout(function() {
-//        alert('You made ' + score + ' clicks in ' + duration + ' seconds. It is ' + clicksBySec + ' clicks per second.');
-//    }, 10);
-//}
 
 goButton.addEventListener("click", function() {
     startGame();
@@ -134,7 +121,7 @@ function handleClick() {
       skillValue.style.transform = 'scaleY(0)';
     }
   }
-   
+  
 function startComputerPencil() {
     if (computerPencilInterval) {
       clearInterval(computerPencilInterval);
@@ -160,6 +147,27 @@ function startPlayerPencil() {
     }
 }
 
+function trackClicksPerSecond() {
+    let clicks = 0;
+    let timerId;
+
+    function startTimer() {
+        clicks = 0; 
+        timerId = setInterval(resetClicks, 1000);
+    }
+
+    function resetClicks() {
+        console.log('clicks per second: ', clicks),
+        clicks = 0
+    }
+    function trackClick() { 
+        clicks++;
+    }
+    const trackedElement = document.getElementById('clickArea');
+    trackedElement.addEventListener('click', trackClick);
+    startTimer();
+}
+trackClicksPerSecond();
 
 
 function startMusic() {
