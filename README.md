@@ -42,8 +42,9 @@ Clip Studio Paint
 
 *music6 S3&K_BA.WAV:* **//I hereby acknowledge that this sound is subject to removal as it is copyrighted material sourced from SEGA and the game Sonic & Knuckles.** Downloaded from The Sounds Resource.
 
-Video References:
-Creating a Click Speed Test Game in HTML5 with JavaScript: https://youtu.be/wE75zjrBDYM
+**Video References:**
+Creating a Click Speed Test Game in HTML5 with JavaScript: 
+https://youtu.be/wE75zjrBDYM
 
 How To Make Circular Progress Bar Using HTML CSS JavaScript | Neomorphism Progress Bar: https://youtu.be/mSfsGTIQlxg
 
