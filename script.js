@@ -1,3 +1,4 @@
+// all variables are as follows
 let score;
 let duration = 30;
 let startTime;
@@ -39,6 +40,7 @@ function titleMusic() {
     audio.loop = true;
   }
 
+// function which activates the game timer
 function timer() {
     hide(goButton);
     score = -1;
@@ -58,6 +60,7 @@ function timer() {
         //return total;
 }
 
+// function that determines the end of the game behaviors
 function endGame() {
     if (playerWinner = true) {
         clearInterval(timerId);
@@ -69,6 +72,7 @@ function endGame() {
    
 }
 
+// function that declares the conditions for player to win the game
 function playerWinGame() {
     playerPencilLead.style.height = finishLinePosition + 'px';
     clearInterval(computerPencilInterval);
@@ -82,6 +86,7 @@ function playerWinGame() {
     startMuuuuusic();
 }
 
+// function that declares the condition for the game to time out/player loses game
 function timeOutGame() {
     if(ended == true){
         playerPencilLead.style.height = 0;
@@ -99,6 +104,7 @@ function timeOutGame() {
 var cpuWinner = false;
 var playerWinner = false;
 
+// function that declares the conditions for the cpu to win the game
 function cpuWinGame() {
     if(cpuPencilLead.style.height == finishLinePosition + 'px'){
     clearInterval(computerPencilInterval);
@@ -119,6 +125,7 @@ resetButton.addEventListener('click', function () {
     resetGame();
 });
 
+// function that resets the game
 function resetGame() {
     playerPencilLead.style.height = '3px';
     resetButton.style.visibility = 'hidden';
@@ -131,6 +138,7 @@ function resetGame() {
     timer();
 }
 
+// important game buttons
 goButton.addEventListener("click", function() {
     timer();
 });
@@ -145,6 +153,7 @@ clickArea.addEventListener("click", function() {
     }
 });
 
+// function that handles clicks; the commented out portions belong with a gauge I want to include later on.
 function handleClick() {
     if (!startTimestamp) {
       startTimestamp = performance.now();
@@ -169,7 +178,8 @@ function handleClick() {
 //       skillValue.style.transform = 'scaleY(0)';
 //     }
 //   }
-  
+ 
+ // function that tells the cpu to start extending
 function startComputerPencil() {
     if (computerPencilInterval) {
       clearInterval(computerPencilInterval);
@@ -194,6 +204,7 @@ function startComputerPencil() {
 
   }
 
+// function increments the height of the player's pencil by 5 pixels and checks if it has reached the finish line, triggering the player's victory if it has
 function startPlayerPencil() {
     let currentHeight = parseInt(playerPencilLead.style.height) || 0;
     playerPencilLead.style.height = (currentHeight + 5) + 'px';
@@ -203,7 +214,7 @@ function startPlayerPencil() {
     }
 }
 
-
+// funciton to track player clicks per second; tells the playerPencilLead to go back to 0 if player clicks exceed 7 clicks per second
 function trackClicksPerSecond() {
     let clicks = 0;
     let timerId;
@@ -233,6 +244,7 @@ function trackClicksPerSecond() {
 
 trackClicksPerSecond();
 
+// music box
 function startMusic() {
   music.play();
 }
@@ -253,7 +265,7 @@ function startMuuuuuusic() {
 }
 
   
-
+// functions pertaining to splashPage and instructionManual
 function hideSplashPage() {
   var splashPage = document.getElementById("splashPage");
   splashPage.style.display = "none";
