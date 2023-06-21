@@ -7,23 +7,25 @@ let startTimestamp;
 
 let computerPencilHeight = 0;
 let computerPencilInterval;
-let finishLinePosition = 50;
+let finishLinePosition = 316;
 let playerPencilHeight = 0; 
 
 var timerTxt = document.getElementById("timer");
 var scoreTxt = document.getElementById("score");
 var clicksTxt = document.getElementById("clicks");
 var goButton = document.getElementById("goButton");
+var resetButton = document.getElementById("resetButton");
 var clickArea = document.getElementById("clickArea");
 var skillValue = document.getElementById("skillValue")
-var playerPencilLead = document.getElementById("playerPencilLead")
-var cpuPencilLead = document.getElementById("cpuPencilLead")
+var playerPencilLead = document.getElementById("playerPencilLead");
+var cpuPencilLead = document.getElementById("cpuPencilLead");
 var winMessage = document.getElementById("win-message");
+var loseMessage = document.getElementById("lose-message");
 
 var show = function(elem) {
     elem.style.display = 'inline';
 };
-h
+
 var hide = function(elem) {
     elem.style.display = 'none';
 };
@@ -40,22 +42,59 @@ function startGame() {
             timerTxt.textContent = total.toFixed(2);
         } else {
             ended = true;
-            clearInterval(timerId);
+            clearInterval(timerId);          
             endGame();
         }
     }, 1);
 }
 
-function endGame() {
-    var clicksBySec = (score / duration).toFixed(2);
-    timerTxt.textContent = duration.toFixed(3);
-    clicksTxt.textContent = clicksBySec;
-    show(goButton);
+function winGame() {
+    playerPencilLead.style.height = finishLinePosition + 'px';
+    winMessage.style.display = 'block';
 
-    setTimeout(function() {
-        alert('You made ' + score + ' clicks in ' + duration + ' seconds. It is ' + clicksBySec + ' clicks per second.');
-    }, 10);
+    setTimeout(function () {
+        resetButton.style.visibility = 'visible';
+        resetButton.style.display = 'block';
+    }, 3000);
 }
+
+function loseGame() {
+    cpuPencilLead.style.height = finishLinePosition + 'px';
+    loseMessage.style.display = 'block';
+
+    setTimeout(function () {
+        resetButton.style.visibility = 'visible';
+        resetButton.style.display = 'block';
+    }, 3000);
+}
+
+resetButton.addEventListener('click', function () {
+    resetGame();
+});
+
+function resetGame() {
+    playerPencilLead.style.height = '3px';
+    cpuPencilLead.style.height = '3px';
+    resetButton.style.visibility = 'hidden';
+    winMessage.style.display = 'none';
+    loseMessage.style.display = 'none';
+    playerPencilHeight = 0;
+    computerPencilHeight = 0;
+    clearInterval(computerPencilInterval);
+    startComputerPencil();
+    startGame();
+}
+
+//function endGame() {
+//    var clicksBySec = (score / duration).toFixed(2);
+//    timerTxt.textContent = duration.toFixed(3);
+//    clicksTxt.textContent = clicksBySec;
+//    show(goButton);
+
+//    setTimeout(function() {
+//        alert('You made ' + score + ' clicks in ' + duration + ' seconds. It is ' + clicksBySec + ' clicks per second.');
+//    }, 10);
+//}
 
 goButton.addEventListener("click", function() {
     startGame();
@@ -121,15 +160,6 @@ function startPlayerPencil() {
     }
 }
 
-function winGame() {
-    playerPencilLead.style.height = finishLinePosition + 'px';
-    winMessage.style.display = 'block';
-
-    setTimeout(function () {
-        resetButton.style.visibility = 'visible';
-        resetButton.style.display = 'block';
-    }, 3000);
-}
 
 
 function startMusic() {

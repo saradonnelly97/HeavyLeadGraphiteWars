@@ -48,7 +48,8 @@
       <div class="playerPencil">
         <div id="clickArea" onclick="startMuusic()"></div> 
         <img src="./assets/mechPenc.png" alt="Pixel art of a mechanical pencil." id="mechPen">
-        <div id="playerPencilLead"></div>   
+        <div id="playerPencilLead"></div> 
+        <div id="finish-line"></div>  
       </div>
       
       <div class="cpuPencil">
@@ -56,8 +57,12 @@
         <div id="cpuPencilLead"> </div>
       </div>
 
-      <div id="finish-line"></div>
-      <div id="win-message"></div>
+      <div class="results">
+        <div id="win-message">You Done It!</div>
+        <div id="lose-message">You Didnt Done It!</div>
+        <button id="resetButton">Reset Game</button>
+      </div>
+ 
     </div>
 </body>
 </html>
