@@ -4,6 +4,7 @@ let startTime;
 let ended = true;
 let clicks;
 let startTimestamp;
+let timerId;
 
 let computerPencilHeight = 0;
 let computerPencilInterval;
@@ -35,39 +36,41 @@ function timer() {
     score = -1;
     ended = false;
     startTime = new Date().getTime();
-    var timerId = setInterval(function() {
+    timerId = setInterval(function() {
         var total = (new Date().getTime() - startTime) / 1000;
-
         if (total < duration) {
             timerTxt.textContent = total.toFixed(2);
         } 
         else {
             ended = true;
-            clearInterval(timerId);          
+            clearInterval(total);          
             timeOutGame();
         }
     }, 1);
+        return total;
 }
 
-//  function timeStop() {
-//      if (cpuWinGame() = true) {
-//          clearInterval(timerId);
-//      }
-//  }
-
+function endGame() {
+    if (playerWinner = true) {
+        clearInterval(timerId);
+    } 
+    else if (cpuWinner = true) {
+        console.log(total);
+        clearInterval(timerId);
+    } 
+   
+}
 
 function playerWinGame() {
     playerPencilLead.style.height = finishLinePosition + 'px';
-    cpuPencilLead.style.height = '0px';
-    playerWinner = true;
-    cpuWinner = false;
+    clearInterval(computerPencilInterval);
     winMessage.style.display = 'block';
 
     setTimeout(function () {
         resetButton.style.visibility = 'visible';
         resetButton.style.display = 'block';
     }, 3000);
-    return playerWinner;
+    endGame();
 }
 
 function timeOutGame() {
@@ -98,7 +101,7 @@ function cpuWinGame() {
         resetButton.style.visibility = 'visible';
         resetButton.style.display = 'block';
     }, 3000); 
-    return cpuWinner;
+    endGame();
 }
 
 resetButton.addEventListener('click', function () {
@@ -232,6 +235,15 @@ function startMuuuusic() {
     music4.play();
 }
 
+window.onload = function() {
+    titleMusic();
+  }
+  
+function titleMusic() {
+    var audio = new Audio('./assets/pencilclickergame.wav');
+    audio.play();
+    audio.loop = true;
+  }
 
 function hideSplashPage() {
   var splashPage = document.getElementById("splashPage");
@@ -256,3 +268,5 @@ function toggleInstructionManual() {
     instructionManual.style.zIndex = "1";
   }
 }
+
+endGame();
