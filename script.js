@@ -99,7 +99,7 @@ function resetGame() {
 goButton.addEventListener("click", function() {
     startGame();
 });
-
+p
 clickArea.addEventListener("click", function() {
     if (!ended) {
         score++;
