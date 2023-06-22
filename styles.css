@@ -34,7 +34,7 @@ button:active {
         box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
                     inset 2px 2px 3px rgba(0,0,0,0.5) 
     }
-
+    
 #splashPage {
     position: absolute;
     width: 965px;
@@ -67,7 +67,7 @@ button:active {
 }
 
 .gameElements {
-    background-color: rgb(113, 155, 52);
+    background-image: url(./assets/bg.png);
     height: 500px;
     width: 330px;
     margin-top: 20px;
@@ -236,4 +236,15 @@ background-color: rgba(195, 234, 109, 0.7)
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.backgroundDiv {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1200px;
+    height: 800px;
+    background-color: aqua;
+    z-index: -1;
 }
