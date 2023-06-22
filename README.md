@@ -28,19 +28,13 @@ Clip Studio Paint
 **Audio Assets:** 
 *title pencilclickergame.wav:* Written/Produced by Emma Donnelly specifically for use of the game Heavy Lead Graphite Wars copyright 2023;
 
-**THE FOLLOWING SOUND ASSETS ARE SUBJECT TO COPYRIGHT. THEREFORE UNTIL PATCHES OF THIS GAME ARE PUBLISHED AND THE SOUND ASSETS ARE //INDEFINITELY// REMOVED AND REPLACED WITH PUBLIC DOMAIN,, THIS GAME IS COMPLETELY UNSUBJECT TO PROFITABILITY. AS LONG AS THESE SOUNDS ARE WITHIN THE GAME, THIS GAME WILL BE CONSIDERED A TOY AND NOTHING MORE. please dont sue me sega/nintendo.**
-
-*music2 SE_00_22.wav:* **//I hereby acknowledge that this sound is subject to removal as it is copyrighted material sourced from SEGA and the game Sonic Advance 3.** Downloaded from The Sounds Resource.
-
-*music Startup.mp3:* **//I hereby acknowledge that this sound is subject to removal as it is copyrighted material sourced from Nintendo, The Pokemon Team, GameFreak and the game Pokemon mini BIOS (Pokemon Mini).** Downloaded from KHInsider.
-
-*music3 SA3_142.wav:* **//I hereby acknowledge that this sound is subject to removal as it is copyrighted material sourced from Nintendo, sound design by TSUNKU and the game Rhythm Tengoku Gold.** Downloaded from The Sounds Resource.
-
-*music4 Bide.wav:* **//I hereby acknowledge that this sound is subject to removal as it is copyrighted material sourced from Nintendo, The Pokemon Team, GameFreak and the game Pokemon Red/Blue/Yellow.** Downloaded from The Sounds Resource.
-
-*music5 S3&K_B5.WAV:* **//I hereby acknowledge that this sound is subject to removal as it is copyrighted material sourced from SEGA and the game Sonic & Knuckles.** Downloaded from The Sounds Resource.
-
-*music6 S3&K_BA.WAV:* **//I hereby acknowledge that this sound is subject to removal as it is copyrighted material sourced from SEGA and the game Sonic & Knuckles.** Downloaded from The Sounds Resource.
+*The following sounds are sourced from BandLab sounds and are royalty free:*
+*Instruction_Manual.wav* 
+*Lose_Game.wav*
+*Pencil_Break.wav*
+*Pencil_Click.wav*
+*Start_Game.wav*
+*Win_Game.wav*
 
 **Video References:**
 Creating a Click Speed Test Game in HTML5 with JavaScript: 
@@ -52,6 +46,7 @@ How To Make Circular Progress Bar Using HTML CSS JavaScript | Neomorphism Progre
 **Contributors:**
 ChatGPT
 StackOverflow
+BandLab
 GreatStack
 Christopher Marlowe
 Sylvain Saurel
