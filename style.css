@@ -1,7 +1,8 @@
 @font-face {
   font-family: "CustomFont";
-  src: url("/assets/OldSchoolAdventures-42j9.ttf") format("truetype");
+  src: url("./assets/OldSchoolAdventures-42j9.ttf") format("truetype");
 }
+
 body {
   margin: 0;
   padding: 0;
@@ -97,7 +98,7 @@ button:active {
 }
 
 .gameElements {
-  background-image: url(/assets/bg.png);
+  background-image: url(./assets/bg.png);
   height: 500px;
   width: 330px;
   margin-top: 20px;
@@ -112,7 +113,7 @@ button:active {
   height: 500px;
   margin-top: 20px;
   border-style: solid;
-  background-image: url(/assets/bg.png);
+  background-image: url(./assets/bg.png);
 }
 
 .skill {
