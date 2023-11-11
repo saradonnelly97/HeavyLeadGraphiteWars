@@ -1,7 +1,12 @@
+/* language: scss */
+/* language: scss */
+/* language: scss */
+/* language: scss */
 @font-face {
   font-family: "CustomFont";
   src: url("/assets/OldSchoolAdventures-42j9.ttf") format("truetype");
 }
+/* language: scss */
 body {
   margin: 0;
   padding: 0;
