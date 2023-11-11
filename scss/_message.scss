@@ -11,6 +11,7 @@
         color: green;
     } @else {
         color: red;
+        @warn "The message-id is not 'win', the font color will be set to red."
     }
     
     display: none;
