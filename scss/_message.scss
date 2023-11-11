@@ -1,0 +1,17 @@
+@mixin message-style($message-id) {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+
+    @if $message-id == win {
+        color: green;
+    } @else {
+        color: red;
+    }
+    
+    display: none;
+}

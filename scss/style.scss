@@ -1,30 +1,37 @@
+@use 'btnConfig' as button;
+@use 'config' as config;
+@use 'fonts' as font;
+@use 'message' as message;
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #dad8d8;
+    @include font.font-properties;
+}
+
+button {
+    @include button.button-style;
+}
+
 #goButton {
+    @include button.button-style;
     left: -70px;
     margin-top: -10px;
     margin: 10px;
     width: 100px;
-    height: 50px;
-    background-color: gray;
-    border-radius: 25px;
-    align-items: center;
-    font-family: 'CustomFont', Arial, sans-serif;
     font-size: 14px;
-
-    &:hover {
-        background-color: rgba(195, 234, 109, 0.7);
-    }
-
-    &:active {
-        box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
-                    inset 2px 2px 3px rgba(0, 0, 0, 0.5);
-    }
 }
 
 #splashPage {
     position: absolute;
     width: 965px;
     height: 530px;
-    background-color: yellowgreen;
+    background-color: config.$primary-color;
     border: 1px solid rgb(113, 155, 52);
     display: inline-block;
     align-items: center;
@@ -39,23 +46,148 @@
     }
 }
 
-button {
-    margin-top: 20px;
-    width: 150px;
-    height: 50px;
-    background-color: gray;
-    border-radius: 25px;
+#instructionManual {
+    position: absolute;
+    width: 965px;
+    height: 530px;
+    background-color: config.$primary-color;
+    display: flex;
     align-items: center;
-    font-family: 'CustomFont', Arial, sans-serif;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.instructions {
+    width: 275px;
+    padding: 10px;
+    background-color: config.$btn-color;
+    border-radius: 25px;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 11px;
+    margin: 20px;
+}
 
-    &:hover {
-        background-color: rgba(195, 234, 109, 0.7);
-    }
+.gameElements {
+    background-image: url(./assets/bg.png);
+    height: 500px;
+    width: 330px;
+    margin-top: 20px;
+    align-items: center; 
+    justify-content: center;
+    border: solid gold 3px;
+}
 
-    &:active {
-        box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
-                    inset 2px 2px 3px rgba(0, 0, 0, 0.5);
-    }
+.gameContainer {
+    position: relative;
+    width: 620px;
+    height: 500px;
+    margin-top: 20px;
+    border-style: solid;
+    background-image: url(./assets/bg.png);
+}
+
+.skill {
+    width: 30px; 
+    height: 260px;
+    left: 150px;
+    margin-top: 10px;
+    position: relative;
+}
+
+#skillValue {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    bottom: 1px;
+    background-color:rgba(195, 234, 109, 0.7);
+    transform-origin: bottom;
+    transform: scaleY(0);
+    transition: transform 0.16s ease-in-out;
+    z-index: 1;
+}
+
+#clickArea {
+    position: absolute;
+    left: 222px;
+    margin-top: 0px;
+    height: 190px;
+    width: 60px;
+    z-index: 2;
+}
+
+#mechPen { 
+    position: relative; 
+    margin-left: 150px; 
+    left: 0;
+    z-index: 1;
+}
+
+#woodPen {
+    position: absolute;
+    top: 0px; 
+    margin-left: calc(54% + 0px);
+    left: 0; 
+    z-index: 1;
+}
+
+#playerPencilLead {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background-color: config.$graphite-color;
+    transition: height 0.2s ease-in-out;
+    margin-left: calc(40% + 3px);
+    top: 186px;
+}
+
+#cpuPencilLead {
+    position: absolute;
+    top: 186px;
+    width: 3px;
+    height: 0px;
+    background-color: config.$graphite-color;
+    transition: height 300ms linear;
+    margin-left: calc(69% + 1px);
+}
+
+#finish-line {
+    position: fixed;
+    width: 620px;
+    height: 3px;
+    background-color: config.$primary-color;
+    transform: translate(0, 40%);
+    display: none;
+}
+
+#win-message {
+    @include message.message-style(win);
+}
+
+#lose-message {
+    @include message.message-style(lose);
+}
+
+#timeout-message {
+    @include message.message-style(timeout); 
+}
+
+#resetButton {
+    visibility: hidden;
+    display: none;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.backgroundDiv {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1200px;
+    height: 800px;
+    background-color: aqua;
+    z-index: -1;
 }

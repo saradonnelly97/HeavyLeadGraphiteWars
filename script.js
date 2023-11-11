@@ -56,7 +56,6 @@ function timer() {
             timeOutGame();
         }
     }, 1);
-        //return total;
 }
 
 // function that determines the end of the game behaviors

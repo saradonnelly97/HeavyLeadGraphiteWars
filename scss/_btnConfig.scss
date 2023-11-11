@@ -1,0 +1,22 @@
+@use 'config' as config;
+@use 'fonts' as font;
+
+@mixin button-style {
+    @include font.font-properties;
+    margin-top: 20px;
+    width: 150px; 
+    height: 50px;
+    background-color: config.$btn-color;
+    border-radius: 25px;
+    align-items: center;
+
+
+    &:hover { 
+        background-color: config.$primary-color;
+    }
+
+    &:active {
+        box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+                    inset 2px 2px 3px rgba(0, 0, 0, 0.5);
+    }
+}
